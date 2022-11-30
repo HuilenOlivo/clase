@@ -18,6 +18,7 @@ from django.urls import path
 from AppClase.views import Padre
 from AppClase.views import Madre
 from AppClase.views import Hermano
+from AppClase.views import proyectohtml
 
 
 urlpatterns = [
@@ -25,4 +26,5 @@ urlpatterns = [
     path('padre/', Padre),
     path('madre/', Madre),
     path('hermano/', Hermano),
+    path('proyectohtml/', proyectohtml)
 ]

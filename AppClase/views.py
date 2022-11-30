@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Persona
 from django.http import HttpResponse
+from django.template import Template, Context
 
 # Create your views here.
 
@@ -21,3 +22,12 @@ def Hermano (request):
     hermano.save()
     cadena_texto=f"Familiar Guardado: Nombre={hermano.nombre}, Apellido={hermano.apellido}, edad={hermano.edad}, telefono={hermano.telefono}"
     return HttpResponse(cadena_texto)
+
+def proyectohtml (request):
+
+    archivo=open("C:/Users/s_tro/Desktop/prueba clase18/proyectopython/plantillas/template.html")
+    template=Template(archivo.read())
+    contexto=Context()
+
+    documento=template.render(contexto)
+    return HttpResponse(documento)
